@@ -1,0 +1,33 @@
+﻿@*
+   
+    
+*@
+@model Library.Models.Book
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div>
+    <form asp-action="AddBook" asp-controller="Book">        
+        <div asp-validation-summary="All" style="font-size:23px; color:orangered"></div>
+        <div class="form-group">
+            <label class="form-label" asp-for="Autor">Автор</label>
+            <input type="text" asp-for="Autor" class="form-control" placeholder="Введите имя автора" />
+        </div>
+        <div class="form-group">
+            <label class="form-label" asp-for="Year_of_publication">Год издания</label>
+            <input type="number" asp-for="Year_of_publication" class="form-control" placeholder="Введите дату публикации начиня с 1800г" />
+        </div>
+        <div class="form-group">
+            <label class="form-label" asp-for="Number_of_pages">Количесвто страниц</label>
+            <input type="number" asp-for="Number_of_pages" class="form-control" placeholder="Введите количество страниц"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" asp-for="Description ">Описание</label>
+            <textarea class="form-control" asp-for="Description " aria-label="With textarea" placeholder="Введите описание книги"></textarea>         
+        </div>
+        <div class="form-group" style="margin-top:20px">
+            <input type="submit" value="Добавить" class="btn btn-primary btn-lg" />
+        </div>
+    </form>
+
+</div>
